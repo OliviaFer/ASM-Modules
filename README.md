@@ -8,5 +8,7 @@ Bowser's Blueprints ASM-Modules offer a way to make assembly patches that do not
 The folders contain the actual code. How this code will be imported into the rom is determined by the module.json file in each folder, code may overwrite something, but for the most part, it will be imported into free space and hooked to an address.
 
 The documentation for ASM-Modules and Tweaks:
-  https://blueprint64.ca/doc/asm-module-guide.html
-  https://blueprint64.ca/doc/tweak-guide.html
+
+https://blueprint64.ca/doc/asm-module-guide.html
+
+https://blueprint64.ca/doc/tweak-guide.html
