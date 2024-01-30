@@ -4,6 +4,11 @@ To use the asm-modules, the .bbpmod files should be installed in the 'ASM Module
 For some of the ones shared here, you must modify a few things to use them, specially for the title area.
 
 Since ASM-Modules are all super modular, all of them can be used together and are currently fully compatible with all the default ASM-Modules included in BBP.
+
+Custom Star Models:
+
+
+
 __________________________
 For the tweaks, install 'extra-tweaks-pack_1.0.0.json' in the 'Tweaks' menu using the 'Manage Tweak Packs' option. All of these tweaks are harmless as Bowser's Blueprints can easily revert tweaks for you, so they can be played around with.
 
