@@ -4,9 +4,7 @@ For some of the ones shared here, you must modify a few things to use them, spec
 
 Since ASM-Modules are all super modular, all of them can be used together and are currently fully compatible with all the default ASM-Modules included in BBP.
 
-For the tweaks, install 'extra-tweaks-pack.json' in the Tweaks menu using the 'Manage Tweak Packs' option.
-
-All of these tweaks are harmless as Bowser's Blueprints can easily revert tweaks for you, so they can be played around with.
+For the tweaks, install 'extra-tweaks-pack.json' in the Tweaks menu using the 'Manage Tweak Packs' option. All of these tweaks are harmless as Bowser's Blueprints can easily revert tweaks for you, so they can be played around with.
 
 
 __________________________
