@@ -1,0 +1,795 @@
+{
+	"version": "1.1.0",
+	"pack_info": {
+		"name": "Extra Tweaks Pack",
+		"uuid": "69ad0e7c-347b-45e9-bbde-6f8e18e59336",
+		"version": "1.0.0"
+	},
+	"tweaks": [
+		{
+			"name": "Pole Fix",
+			"uuid": "4764e8e3-e278-4383-8699-ed86fe125c28",
+			"description": "Lets Mario grab the bottom of poles instead of dropping. By FramePerfection.",
+			"type": "basic",
+			"patch_static": [{
+				"seek": "A948",
+				"apply": "24 0E 00 01 AF AE 00 20 8F A4 00 28 8C 98 00 88 0C 09 32 25 AF B8 00 1C 8F B8 00 1C 8F B9 00 30 8F A9 00 28 AD 39 00 78 AD 39 00 80 AD 20 00 4C AD 20 00 54 AF 00 01 08 AF 00 01 0C C5 30 00 40 C7 32 00 A4 46 12 81 01 44 80 30 00 46 06 20 3E 00 00 00 00 45 00 00 02 00 00 00 00 44 80 20 00 E7 04 01 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"
+			}]
+		},
+		{
+			"name": "Slope Fix",
+			"uuid": "533c39e6-bb69-421c-bac0-10580ce4a59b",
+			"description": "WARNING: There's a chance that this tweak is incompatible with Bowser's Blueprints' extended boundaries. In case of any collision related issue, you can always remove this tweak and see if that's the fix. This tweak is here because it can make modelling considerably less painful, and it appears to be working as intended. Tweak by jesusyoshi. ",
+			"type": "basic",
+			"patch_static": [{
+				"seek": "FE2F8",
+				"apply": "3C 08 DF FF AF A8 00 20 8C 88 00 04 8C 84 00 00 85 09 00 0A 85 0A 00 0E 85 0B 00 10 85 0C 00 14 01 47 70 23 01 69 78 23 01 CF 00 19 00 00 C0 12 01 8A 70 23 01 25 C8 23 03 2E 00 19 00 00 78 12 03 0F C8 23 07 21 00 03 00 00 00 00 10 00 00 6B 00 00 00 00"
+			}, {
+				"seek": "FE49C",
+				"apply": "46 0A 25 83 44 86 20 00 3C 01 C2 9C 44 81 90 00 46 80 22 A0 C7 B8 00 20 46 18 B0 3C 46 12 B4 00 44 80 40 00 46 10 51 81 45 01 00 0B 00 00 00 00 46 08 30 3C 00 00 00 00 45 00 00 03 00 00 00 00 10 00 00 05 00 00 00 00 8F B8 00 48 AF A8 00 04 E7 B6 00 20 E7 16 00 00 14 80 FF 82"
+			}]
+		},
+		{
+			"name": "Recover from Slide Kick with B Button",
+			"uuid": "ad5275dc-983b-4db9-a9d3-d6df04004cfa",
+			"description": "Allows Mario to recover from Slide Kick with either the A or B Button. Tweak by jesusyoshi.",
+			"type": "basic",
+			"patch_static": [{
+				"seek": "23352",
+				"apply": "20"
+			}]
+		},
+		{
+			"name": "Star Select Tweaks",
+			"description": "Tweak aspects of the Star Select screen.",
+			"type": "composite",
+			"components": [
+				{
+					"name": "Horizontally Center Star Numbers",
+					"uuid": "1b2278a1-d540-4a1f-9f8b-472fc31fba66",
+					"description": "Centers the numbers above each star. Tweak by biobak.",
+					"type": "basic",
+					"patch_static": [{
+						"seek": "22795B",
+						"apply": "8D"
+					}]
+				},
+				{
+					"name": "Remove Course Number",
+					"uuid": "70e96fc5-bf9d-4157-aa31-01f0c327a639",
+					"description": "Removes the Course number.",
+					"type": "basic",
+					"patch_static": [{
+						"seek": "227594",
+						"apply": "00 00 00 00"
+					}]
+				},
+				{
+					"name": "Background Colour",
+					"uuid": "31f2b4f2-4543-4c3b-9f29-6a59faff14d4",
+					"description": "Set a new colour for the background.",
+					"type": "colour",
+					"alpha": false,
+					"default": "#FFFFFF",
+					"patch_value": [{
+						"seek": "2A654A",
+						"type": "colour16"
+					}]
+				}
+			]
+		},
+		{
+			"name": "Remove Water Upwarp",
+			"uuid": "811e4ba9-1093-44d1-9832-953c55ad3ea4",
+			"description": "When Mario enters water, he won't instantly upwarp to it's surface. Tweak by jesusyoshi.",
+			"type": "basic",
+			"patch_static": [{
+				"seek": "E4DC",
+				"apply": "00 00 00 00"
+			}]
+		},
+		{
+			"name": "Fall Damage is Halved",
+			"uuid": "bf9db8aa-7800-4d8a-bcc9-f214e5c2fd89",
+			"description": "Incompatible with the 'No Fall Damage' tweak in 'Fall Damage Tweaks'. Tweak by Pyro Jay, code help by Katx.",
+			"type": "basic",
+			"patch_static": [{
+				"seek": "25303",
+				"apply": "08"
+			}, {
+				"seek": "25307",
+				"apply": "0C"
+			}, {
+				"seek": "2539B",
+				"apply": "04"
+			}, {
+				"seek": "2539F",
+				"apply": "06"
+			}]
+		},
+		{
+			"name": "Fix Inconsistent Text Character Spacing",
+			"uuid": "cbd8add9-5eaa-4dda-b087-b1d490ab23af",
+			"description": "Fixes the inconsistent spacing around the 0, 1, 7, x, ? and ! dialog text characters, that causes them to have a bigger empty space around them than other letters and numbers. Tweak by biobak.",
+			"type": "basic",
+			"patch_static": [{
+				"seek": "EC370",
+				"apply": "06 06"
+			}, {
+				"seek": "EC377",
+				"apply": "06"
+			}, {
+				"seek": "EC3AB",
+				"apply": "06"
+			}, {
+				"seek": "EC464",
+				"apply": "06"
+			}, {
+				"seek": "EC462",
+				"apply": "04"
+			}]
+		},
+		{
+			"name": "Green Demon (Fix)",
+			"uuid": "5ab531b3-2316-42b9-b85e-eda5430aec90",
+			"description": "1-UP mushrooms instantly kill Mario. (Incompatible with 'Healing 1-UPs' and original 'Green Demon' tweaks)",
+			"type": "basic",
+			"patch_static": [{
+				"seek": "AEC90",
+				"apply": "3C 0E 80 34 34 01 00 80 A5 C1 B2 1E 00 00 00 00 00 00 00 00"
+			}]
+		},
+		{
+			"name": "Piranha Plant (Sleeping) Damage (Fix)",
+			"uuid": "c050b8fa-5b5c-4f6e-bcd4-a3df71b7b088",
+			"description": "How much damage the Piranha Plant really does to Mario. This is compatible with 'Piranha Plant (Sleeping) Tweaks'",
+			"type": "integer",
+			"min": 0,
+			"max": 20,
+			"default": 3,
+			"patch_value": [{
+				"seek": "79047",
+				"type": "byte"
+			}]
+		},
+		{
+			"name": "Wallkick Angle Limit",
+			"uuid": "002e07ca-195e-4ac2-b15b-a62e3f6263f5",
+			"description": "Adjust the angle limit (in degrees) for Mario to hit a wall and be able to perform a wallkick.",
+			"type": "float",
+			"min": 0.01,
+			"precision": 2,
+			"max": 89.99,
+			"default": 45,
+			"patch_value": [{
+				"seek": "11496",
+				"type": "short",
+				"transform": 0
+			}, {
+				"seek": "1148A",
+				"type": "short",
+				"transform": 1
+			}],
+			"transforms": [
+				{ "ops": [
+					{ "op": "subtract_other", "val": 180.0 },
+					{ "op": "multiply", "val": 8192.0 },
+					{ "op": "divide", "val": 45.0 }
+				]},
+				{ "ops": [
+					{ "op": "subtract_other", "val": 180.0 },
+					{ "op": "multiply", "val": 8192.0 },
+					{ "op": "divide", "val": 45.0 },
+					{ "op": "subtract_other", "val": 65536.0 }
+				]}
+			]
+		},
+		{
+			"name": "Toad Star Requirements",
+			"description": "Modify the number of stars required for each star-giving Toad to appear.",
+			"type": "composite",
+			"components": [
+				{	
+					"name": "Star Toad 1",
+					"uuid": "0f5756db-53d2-4ac8-a05e-d75a0bef9699",
+					"description": "The number of stars required for the 1st star-giving Toad to appear.",
+					"type": "integer",
+					"min": 0,
+					"max": 255,
+					"default": 12,
+					"patch_value": [{
+						"seek": "3199A",
+						"type": "short"
+					}]
+				},
+				{	
+					"name": "Star Toad 2",
+					"uuid": "3764955c-7e72-4693-8847-7f2f1d0fb8eb",
+					"description": "The number of stars required for the 2nd star-giving Toad to appear.",
+					"type": "integer",
+					"min": 0,
+					"max": 255,
+					"default": 25,
+					"patch_value": [{
+						"seek": "319CE",
+						"type": "short"
+					}]
+				},
+				{	
+					"name": "Star Toad 3",
+					"uuid": "639fbb23-f1ad-407a-91f8-332a1fb4fb1f",
+					"description": "The number of stars required for the 3rd star-giving Toad to appear.",
+					"type": "integer",
+					"min": 0,
+					"max": 255,
+					"default": 35,
+					"patch_value": [{
+						"seek": "31A02",
+						"type": "short"
+					}]
+				}
+			]
+		},
+		{
+			"name": "Camera Button Sounds",
+			"description": "Remove any of the camera sounds.",
+			"type": "composite",
+			"components": [
+				{	
+					"name": "C-Side",
+					"uuid": "fe4991f5-e931-4e4c-87ea-496bc8bfe6c9",
+					"description": "Sound played when the camera is moved sideways.",
+					"type": "basic",
+					"patch_static": [{
+						"seek": "468B8",
+						"apply": "03 E0 00 08 00 00 00 00"
+					}]
+				},
+				{	
+					"name": "C-Up",
+					"uuid": "9ba71614-8b8c-4c9c-9f06-a5ac93a9857b",
+					"description": "Sound played when the camera is zoomed-in.",
+					"type": "basic",
+					"patch_static": [{
+						"seek": "46850",
+						"apply": "03 E0 00 08 00 00 00 00"
+					}]
+				},
+				{	
+					"name": "C-Down",
+					"uuid": "57fb106f-c0fe-4e8d-837e-cda5947f26d0",
+					"description": "Sound played when the camera is zoomed-out.",
+					"type": "basic",
+					"patch_static": [{
+						"seek": "46884",
+						"apply": "03 E0 00 08 00 00 00 00"
+					}]
+				},
+				{	
+					"name": "R",
+					"uuid": "a01fbe61-a222-4aa2-b316-e227ae5b7934",
+					"description": "Sound played when the camera mode is switched between Mario's and Lakitu's.",
+					"type": "basic",
+					"patch_static": [{
+						"seek": "46920",
+						"apply": "03 E0 00 08 00 00 00 00"
+					}]
+				},
+				{	
+					"name": "Blocked Sound",
+					"uuid": "81ec3d4a-9ecb-46b3-a607-8476ed2498de",
+					"description": "Sound played when the camera movement is blocked.",
+					"type": "basic",
+					"patch_static": [{
+						"seek": "468EC",
+						"apply": "03 E0 00 08 00 00 00 00"
+					}]
+				}
+			]
+		},
+		{
+			"name": "Goomba Tweaks",
+			"description": "Modify properties of the Goomba enemy.",
+			"type": "composite",
+			"components": [
+				{
+					"name": "Tiny Goomba Scale",
+					"uuid": "be263019-1308-4e6e-859f-0949ac82995d",
+					"description": "The size of the Tiny Goomba.",
+					"type": "float",
+					"precision": 1,
+					"min": 0,
+					"max": 100,
+					"default": 0.5,
+					"patch_value": [{
+						"seek": "ED8E8",
+						"type": "float32"
+					}]
+				},
+				{
+					"name": "Tiny Goomba Damage",
+					"uuid": "d296a0fa-8015-4d8c-b065-2ca1b3ee59eb",
+					"description": "How much damage the Tiny Goomba does to Mario.",
+					"type": "integer",
+					"min": 0,
+					"max": 20,
+					"default": 0,
+					"patch_value": [{
+						"seek": "ED8F2",
+						"type": "byte"
+					}]
+				},
+				{
+					"name": "Regular Goomba Scale",
+					"uuid": "0da0c848-5264-4210-a60d-4ce0f48d2ae8",
+					"description": "The size of the Regular Goomba.",
+					"type": "float",
+					"precision": 1,
+					"min": 0,
+					"max": 100,
+					"default": 1.5,
+					"patch_value": [{
+						"seek": "ED8D0",
+						"type": "float32"
+					}]
+				},
+				{
+					"name": "Regular Goomba Damage",
+					"uuid": "6459b408-56e9-4ea1-b326-5ed8c6b48cc3",
+					"description": "How much damage the Regular Goomba does to Mario.",
+					"type": "integer",
+					"min": 0,
+					"max": 20,
+					"default": 1,
+					"patch_value": [{
+						"seek": "ED8DA",
+						"type": "byte"
+					}]
+				},
+				{
+					"name": "Huge Goomba Scale",
+					"uuid": "c022188d-6aad-45fc-afc7-b33e0be2532a",
+					"description": "The size of the Huge Goomba.",
+					"type": "float",
+					"precision": 1,
+					"min": 0,
+					"max": 100,
+					"default": 3.5,
+					"patch_value": [{
+						"seek": "ED8DC",
+						"type": "float32"
+					}]
+				},
+				{
+					"name": "Huge Goomba Damage",
+					"uuid": "ab72a7c3-c8ce-4db3-a50a-3e82fdfff8d8",
+					"description": "How much damage the Huge Goomba does to Mario.",
+					"type": "integer",
+					"min": 0,
+					"max": 20,
+					"default": 2,
+					"patch_value": [{
+						"seek": "ED8E6",
+						"type": "byte"
+					}]
+				},
+				{
+					"name": "Coins Dropped",
+					"uuid": "9f5b1093-aeda-4fde-aa9e-229748236834",
+					"description": "The number of coins spawned when any type of Goomba is defeated. Huge Goomba will still drop a blue coin if ground-pounded.",
+					"type": "integer",
+					"min": 0,
+					"max": 25,
+					"default": 1,
+					"patch_value": [{
+						"seek": "ED8C7",
+						"type": "byte"
+					}]
+				}
+			]
+		},
+		{
+			"name": "Shell (Riding) Tweaks",
+			"description": "Modify properties of the riding shell",
+			"type": "composite",
+			"components": [
+				{
+					"name": "No Music",
+					"uuid": "9ae215ea-9ffa-4d41-a546-91cfd0aba642",
+					"description": "Shells won't stop the background music.",
+					"type": "basic",
+					"patch_static":[{
+						"seek": "A74C",
+						"apply": "00 00 00 00"
+					}, {
+						"seek": "7644",
+						"apply": "00 00 00 00"
+					}]
+				},
+				{
+					"name": "Shell Ride/Underwater Music",
+					"uuid": "6167c5c3-9e03-4b7b-b171-4399ea2be0ad",
+					"description": "Sets the music track that plays when you ride a shell. This also changes the track used for the underwater shell.",
+					"type": "enum",
+					"preset": "music",
+					"default": 14,
+					"patch_value": [{
+						"seek": "431F",
+						"type": "byte",
+						"transform": 0
+					}, {
+						"seek": "432B",
+						"type": "byte",
+						"transform": 0
+					}],
+					"transforms": [
+						{ "ops": [{ "op": "add", "val": 128}]}
+					]
+				},
+				{
+					"name": "Spinning Speed (degrees/second)",
+					"uuid": "270249fb-4668-43d1-a5b7-7662d44c56d7",
+					"description": "Sets how fast the shells spin in place.",
+					"type": "float",
+					"min": -5400.0,
+					"precision": 2,
+					"max": 5400.0,
+					"default": 675,
+					"patch_value": [{
+						"seek": "78726",
+						"type": "short",
+						"transform": 0
+					}],
+					"transforms": [
+						{ "ops": [
+							{ "op": "divide", "val": 675.0 },
+							{ "op": "multiply", "val": 4096.0 }
+						]}
+					]
+				},
+				{
+					"name": "On Land:",
+					"uuid": "5bd0e7a6-9654-44aa-ab70-04973fcb27da",
+					"description": "What shells will spawn on land.",
+					"type": "switch",
+					"default": 1,
+					"seeks": [ "7873C", "7882C", "78844" ],
+					"patch_case":[
+					{
+						"name": "Nothing",
+						"patches": [ "00 00 00 00", "00 00 00 00", "00 00 00 00" ]
+					},
+					{
+						"name": "Spawn Sparkles",
+						"patches": [ "0C 0A F5 8B", "0C 0A F5 8B", "0C 0A F5 8B" ]
+					},
+					{
+						"name": "Spawn Flames",
+						"patches": [ "0C 0A F5 77", "0C 0A F5 77", "0C 0A F5 77" ]
+					}]
+				},
+				{
+					"name": "On Water:",
+					"uuid": "722bef21-0397-4aeb-9437-9a62d2e0e951",
+					"description": "What shells will spawn on water.",
+					"type": "switch",
+					"default": 2,
+					"seeks": [ "787B4" ],
+					"patch_case":[
+					{
+						"name": "Nothing",
+						"patches": [ "00 00 00 00" ]
+					},
+					{
+						"name": "Spawn Sparkles",
+						"patches": [ "0C 0A F5 8B" ]
+					},
+					{
+						"name": "Spawn Water Drops",
+						"patches": [ "0C 0A F4 F9" ]
+					},
+					{
+						"name": "Spawn Flames",
+						"patches": [ "0C 0A F5 77" ]
+					}]
+				},
+				{
+					"name": "On Lava:",
+					"uuid": "44808970-9807-4e4d-8959-07c94ca65dcd",
+					"description": "What shells will spawn on lava.",
+					"type": "switch",
+					"default": 2,
+					"seeks": [ "78814" ],
+					"patch_case":[
+					{
+						"name": "Nothing",
+						"patches": [ "00 00 00 00" ]
+					},
+					{
+						"name": "Spawn Sparkles",
+						"patches": [ "0C 0A F5 8B" ]
+					},
+					{
+						"name": "Spawn Flames",
+						"patches": [ "0C 0A F5 77" ]
+					}]
+				},
+				{	
+					"name": "Shell Flames Model ID (read the tooltip)",
+					"uuid": "db43cd69-d642-48a1-82ea-abb0477b2539",
+					"description": "The model ID used here MUST be defined in every level that uses these koopa shells.",
+					"type": "integer",
+					"min": 0,
+					"max": 255,
+					"default": 144,
+					"patch_value": [{
+						"seek": "785FF",
+						"type": "byte"
+					}]
+				},
+				{
+					"name": "No Shell Deletion",
+					"uuid": "8864b0a4-dd59-45d9-996d-7d7fdc424711",
+					"description": "Shells won't despawn after crashing, pressing Z or being near the death floor.",
+					"type": "basic",
+					"patch_static":[{
+						"seek": "78884",
+						"apply": "00 00 00 00"
+					}]
+				},
+				{
+					"name": "No White Puff",
+					"uuid": "ee61404e-27a1-41ad-8735-da994eb6c0e2",
+					"description": "Shells won't spawn white puff in situations where said shells would normally get deleted.",
+					"type": "basic",
+					"patch_static":[{
+						"seek": "7888C",
+						"apply": "00 00 00 00"
+					}]
+				}
+			]
+		},
+		{
+			"name": "Flame Colours and Opacity",
+			"description": "Change flame colours and their opacities.",
+			"type": "composite",
+			"components": [
+				{
+					"name": "Red Flame",
+					"uuid": "04d9e76a-de3a-4ebc-82ac-1663997d71fb",
+					"description": "Set a new colour and alpha value for (formerly) red flames.",
+					"type": "colour",
+					"alpha": true,
+					"default": "#FF3200C8",
+					"patch_value": [
+						{
+							"seek": "ACD738",
+							"type": "colour32"
+						}
+					]
+				},
+				{
+					"name": "Blue Flame",
+					"uuid": "99141cf9-4458-4f89-b6e6-699a85705afc",
+					"description": "Set a new colour and alpha value for (formerly) blue flames.",
+					"type": "colour",
+					"alpha": true,
+					"default": "#6464FFFF",
+					"patch_value": [
+						{
+							"seek": "ACD888",
+							"type": "colour32"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Boo Tweaks",
+			"description": "Modify properties of the Boo enemy.",
+			"type": "composite",
+			"components": [
+				{
+					"name": "Light Colour",
+					"uuid": "0bdb36fb-545e-4059-9a46-aa9bcf62d2ba",
+					"description": "Set the light colour of the Boo.",
+					"type": "colour",
+					"alpha": false,
+					"default": "#FFFFFF",
+					"patch_value": [{
+							"seek": "9259BC",
+							"type": "colour24"
+					}, {
+							"seek": "9259C0",
+							"type": "colour24"
+					}]
+				},
+				{
+					"name": "Dark Colour",
+					"uuid": "c125aa2b-f16c-42be-8286-c7328dec69b0",
+					"description": "Set the dark colour of the Boo.",
+					"type": "colour",
+					"alpha": false,
+					"default": "#979AFF",
+					"patch_value": [{
+							"seek": "9259B4",
+							"type": "colour24"
+					}, {
+							"seek": "9259B8",
+							"type": "colour24"
+					}]
+				}
+			]
+		},
+		{
+			"name": "Disable Bowser Rainbow Effect",
+			"uuid": "e590528b-078e-498b-b760-11b58f7303d2",
+			"description": "Disables the visual rainbow effect used during the 3rd Bowser Fight.",
+			"type": "basic",
+			"patch_static": [{
+				"seek": "72E04",
+				"apply": "10 00 00 09 00 00 00 00"
+			}]
+		},
+		{
+			"name": "Secret Slide Time Attack Tweaks",
+			"description": "Adjust properties of this Secret Star.",
+			"type": "composite",
+			"components": [
+				{
+					"name": "Star ID",
+					"uuid": "0b8dfef6-18b2-4347-8d40-be28a41978a2",
+					"description": "Set the ID for the star (0 to 6).",
+					"type": "integer",
+					"min": 0,
+					"max": 6,
+					"default": 1,
+					"patch_value":[{
+						"seek": "B7B6",
+						"type": "short",
+						"transform": 0
+					}],
+					"transforms":
+						[{ "ops": [{ "op": "left_shift", "val": 8 }]}]
+				},
+				{
+					"name": "Secret Star Time Limit (Frames)",
+					"uuid": "3bb3f1d3-7afa-4469-bc97-c8932cc83600",
+					"description": "Set the time limit in frames for the star to spawn.",
+					"type": "integer",
+					"min": 0,
+					"max": 17999,
+					"default": 630,
+					"patch_value":[{
+						"seek": "B7A6",
+						"type": "short"
+					}]
+				},
+				{
+					"name": "Hide entire timer from the HUD",
+					"uuid": "e2b08538-f31c-4239-8e26-578700500edf",
+					"description": "Hides the entire timer from the HUD.",
+					"type": "basic",
+					"patch_static":[{
+						"seek": "9EE30",
+						"apply": "00 00 00 00"
+					}]
+				},
+				{
+					"name": "'Time' Text Position (x)",
+					"uuid": "1068da5d-bc15-402a-b78e-d261fd5ddad0",
+					"description": "Sets the horizontal position of the 'Time' text.",
+					"type": "integer",
+					"min": 0,
+					"max": 274,
+					"default": 170,
+					"patch_value":[{
+						"seek": "9EA22",
+						"type": "short"
+					}]
+				},
+				{
+					"name": "'Time' Text Position (y)",
+					"uuid": "a7887f07-f852-4993-a93d-7c5acaa37534",
+					"description": "Sets the vertical position of the 'Time' text.",
+					"type": "integer",
+					"min": 0,
+					"max": 224,
+					"default": 185,
+					"patch_value":[{
+						"seek": "9EA2A",
+						"type": "short"
+					}]
+				},
+				{
+					"name": "Hide 'Time' Text",
+					"uuid": "0b1110c3-62a3-4e5d-bc62-b92ad774f956",
+					"description": "Hides the 'Time' text from the HUD.",
+					"type": "basic",
+					"patch_static":[{
+						"seek": "9EA24",
+						"apply": "00 00 00 00"
+					}]
+				},
+				{
+					"name": "Numeric Display Position (x)",
+					"uuid": "3acfc07d-86e3-4340-a8aa-5b5c5c05165c",
+					"description": "Sets the horizontal position of the numeric display.",
+					"type": "integer",
+					"min": 0,
+					"max": 274,
+					"default": 229,
+					"patch_value":[{
+						"seek": "9EA36",
+						"type": "short"
+					}, {
+						"seek": "9EA4E",
+						"type": "short",
+						"transform": 0
+					}, {
+						"seek": "9EA66",
+						"type": "short",
+						"transform": 1
+					}, {
+						"seek": "9EAAE",
+						"type": "short",
+						"transform": 2
+					}, {
+						"seek": "9EAC2",
+						"type": "short",
+						"transform": 3
+					}],
+					"transforms": [
+						{ "ops": [{ "op": "add", "val": 20 }]},
+						{ "ops": [{ "op": "add", "val": 54 }]},
+						{ "ops": [{ "op": "add", "val": 10 }]},
+						{ "ops": [{ "op": "add", "val": 45 }]}
+					]
+				},
+				{
+					"name": "Numeric Display Position (y)",
+					"uuid": "aaf3e590-490c-4523-b50f-656f755df3d0",
+					"description": "Sets the vertical position of the numeric display.",
+					"type": "integer",
+					"min": 4,
+					"max": 217,
+					"default": 185,
+					"patch_value":[{
+						"seek": "9EA3A",
+						"type": "short"
+					}, {
+						"seek": "9EA52",
+						"type": "short"
+					}, {
+						"seek": "9EA6A",
+						"type": "short"
+					}, {
+						"seek": "9EAB2",
+						"type": "short",
+						"transform": 0
+					}, {
+						"seek": "9EAC6",
+						"type": "short",
+						"transform": 0
+					}],
+					"transforms": [
+						{ "ops": [
+							{ "op": "subtract_other", "val": 240 },
+							{ "op": "subtract", "val": 23 }
+						]}
+					]
+				},
+				{
+					"name": "Hide Numeric Display",
+					"uuid": "8e1d8ea6-759d-47b2-8f3c-0b9d94382183",
+					"description": "Hides the numeric display from the HUD.",
+					"type": "basic",
+					"patch_static":[{
+						"seek": "9EA2C",
+						"apply": "10 00 00 35 00 00 00 00"
+					}]
+				}
+			]
+		}
+	]	
+}
