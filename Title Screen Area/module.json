@@ -1,0 +1,183 @@
+{
+	"schema_version": "1.2.0",
+	"name": "Title Screen Area",
+	"uuid": "67d5baf0-7b9e-40fa-85bb-94bf8ed197a4",
+	"version": "1.0.1",
+	"author": "Olivia Fernanda (OliviaFer)",
+	"description": "Makes an area act as a title screen. Gives you two labels for the objects that will act as the Logo and another one for the TM and Copyright:\n\nbhv_title_area_logo\nbhv_title_area_tm_copyright\n\nBoth of these labels should go in your hack's 'behaviour-script-linkers.asm' using the @GENERIC object list.\nYour models should be imported as simple objects, making sure to tick the 'Use Object Opacity' option for both.\n\n'Boot to Screen' Tweak must be set to 'First Level (File A)'.\n\nMario is still spawned, so there must be collision at Mario's starting point.\n\nA recommendation is to use the 'Object Camera' module to easily set an object as the static camera.",
+	"properties": [
+		{
+			"name": "Title Area's Level ID",
+			"type": "Integer",
+			"label": "TITLE_LEVEL",
+			"description": "ID of the Level with the Area that will act as a Title Screen. For the game to start in this area, this level should also be set as the 'Starting Level' in the main page.",
+			"default": 26,
+			"min": 0,
+			"max": 255,
+			"hex": true
+		},
+		{
+			"name": "Title Area's ID",
+			"type": "Integer",
+			"label": "TITLE_AREA",
+			"description": "The ID of the Area that will act as a Title Screen. Must also be set as the 'Starting Area' in the level editor of the level selected above.",
+			"default": 1,
+			"min": 0,
+			"max": 7
+		},
+		{
+			"name": "Black Fading Transition before Title",
+			"type": "Boolean",
+			"label": "INITIAL_FADE",
+			"description": "This is convenient if your title uses a colorful background, making resets, or warping back to this area, less jarring.",
+			"default": false
+		},
+		{
+			"name": "Time Until Logo Animation",
+			"type": "Integer",
+			"label": "TIME_UNTIL_SPLASH",
+			"description": "The amount of frames until the title screen animation occurs.",
+			"default": 0,
+			"min": 0,
+			"max": 20000,
+			"units": " frames"
+		},
+		{
+			"name": "Logo Sound ID + Flags",
+			"type": "Pointer",
+			"label": "SOUND",
+			"description": "The sound played after 'Time Until Logo Animation'. You can find any IDs and flags in the Dialog Text Editor, using the 'Change Sound Effect' option.",
+			"default": "7014FF81"
+		},
+		{
+			"name": "Disable Logo Fade",
+			"type": "Boolean",
+			"label": "DISABLE_TITLE_FADE",
+			"description": "The title logo fades slightly as it shrinks, this disables that.",
+			"default": false
+		},
+		{
+			"name": "Time Until TM and Copyright",
+			"type": "Integer",
+			"label": "TIME_UNTIL_TM",
+			"description": "The amount of frames until the TM and Copyright object's model starts to fade in.",
+			"default": 20,
+			"min": 0,
+			"max": 20000,
+			"units": " frames"
+		},
+		{
+			"name": "Time Until Transition",
+			"type": "Integer",
+			"label": "TIME_UNTIL_WARP",
+			"description": "The amount of frames until the fading transition to the 'Next Screen' starts.",
+			"default": 92,
+			"min": 0,
+			"max": 20000,
+			"units": " frames"
+		},
+		{
+			"name": "Transition to Next Screen Colour",
+			"type": "Colour",
+			"label": "fade",
+			"description": "The color for the fading transition that takes you to the 'Next Screen' (lasts 10 frames).",
+			"default": "#000000",
+			"format": "Components"
+		},
+		{
+			"name": "Next Screen",
+			"type": "Integer",
+			"label": "NEXT_SCREEN",
+			"description": "The screen to be warped to after the fading transition is done. The valid values for this are: 0 for Mario Head. 1 for File Select. 2 to directly jump to the 'Starting Level'",
+			"default": 0,
+			"min": 0,
+			"max": 2
+		},
+		{
+			"name": "Next Level (after title)",
+			"type": "Integer",
+			"label": "STAGE_AFTER_TITLE_AREA",
+			"description": "The ID of the Level where Mario will be spawned in after the Title Screen. The Starting Area for this level is set in the Level Editor.",
+			"default": 16,
+			"min": 0,
+			"max": 255,
+			"hex": true
+		}
+	],
+	"entry_defines": "labels.asm",
+	"entry_injected": [ "transition-hud-warp.asm", "mario.asm", "scope.asm", "splash-tm.asm", "set-start-level.asm" ],
+	"entry_global": [{
+		"file": "special-warp.asm",
+		"start": "2ABF08",
+		"end": "2ABF18"
+	}],
+	"hooks": [
+		{
+			"hook": "RenderHUD",
+			"label": "transition_and_warp",
+			"priority": "Last"
+		},
+		{
+			"hook": "MarioStepBegin",
+			"label": "set_title_flag_on_mario",
+			"priority": "First"
+		},
+		{
+			"hook": "MarioStepBegin",
+			"label": "hide_mario_set_action",
+			"priority": "Last"
+		},
+		{
+			"hook": "Custom",
+			"label": "play_or_not_sound",
+			"priority": "Last",
+			"shim_type": "Head",
+			"shim_address": "46934",
+			"nice": 4
+		},
+		{
+			"hook": "Custom",
+			"label": "init_from_save_file",
+			"priority": "Middle",
+			"shim_type": "Tail",
+			"shim_address": "6E0C",
+			"nice": 2
+		},
+		{
+			"hook": "Custom",
+			"label": "set_title_done",
+			"priority": "Last",
+			"shim_type": "Tail",
+			"shim_address": "2207A0",
+			"nice": 4
+		},
+		{
+			"hook": "Custom",
+			"label": "initial_transition",
+			"priority": "Last",
+			"shim_type": "Head",
+			"shim_address": "87C78",
+			"nice": 1
+		},
+		{
+			"hook": "Custom",
+			"label": "hide_hud",
+			"priority": "Last",
+			"shim_type": "Tail",
+			"shim_address": "6388",
+			"nice": 2
+		},
+		{
+			"hook": "MarioAction",
+			"label": "act_title_impl",
+			"action": "ACT_TITLE"
+		}
+	],
+	"action_ids": [
+		{
+			"var_name": "ACT_TITLE",
+			"category": "Cutscene",
+			"flags": [ "Intangible", "Invulnerable" ]
+		}
+	]
+}
