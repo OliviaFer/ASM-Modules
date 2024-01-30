@@ -13,14 +13,14 @@ Bowser's Blueprints ASM-Modules offer a way to make assembly patches that do not
 
 The folders contain the actual code. How this code will be imported into the rom is determined by the module.json file in each folder, code may overwrite something, but for the most part, it will be imported into free space and hooked to an address, or to one of the predetermined values (from the official asm-module-guide):
 
-"MarioStepBegin" - Runs your code just before each iteration of Mario's behaviour script
-"MarioStepEnd" - Runs your code just after each iteration of Mario's behaviour script
-"LevelLoad" - Runs your code when a new level loads
-"AreaLoad" - Runs your code when an area loads
-"GameStart" - Runs your code once when the game starts
-"RenderHUD" - Runs your code just after the HUD renders
-"FrameEnd" - Runs your code at the end of each frame
-"MarioAction" - Runs your code to execute a custom Mario action
+"MarioStepBegin" - Runs your code just before each iteration of Mario's behaviour script\n
+"MarioStepEnd" - Runs your code just after each iteration of Mario's behaviour script\n
+"LevelLoad" - Runs your code when a new level loads\n
+"AreaLoad" - Runs your code when an area loads\n
+"GameStart" - Runs your code once when the game starts\n
+"RenderHUD" - Runs your code just after the HUD renders\n
+"FrameEnd" - Runs your code at the end of each frame\n
+"MarioAction" - Runs your code to execute a custom Mario action\n
 
 The documentation for ASM-Modules and Tweaks:
 
