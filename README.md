@@ -1,6 +1,10 @@
-# ASM-Modules
-To use these, the .bbpmod files should be installed in the 'ASM Modules' menu, and then added from the library with 'Add Module'.
+# ASM-Modules and Tweaks
+To use the asm-modules, the .bbpmod files should be installed in the 'ASM Modules' menu, and then added from the library with 'Add Module'.
 For some of the ones shared here, you must modify a few things to use them, specially for the title area.
+
+For the tweaks, install 'extra-tweaks-pack.json' in the Tweaks menu using the 'Manage Tweak Packs' option.
+All of these tweaks are harmless as Bowser's Blueprints can easily revert tweaks for you, so they can be played around with.
+
 
 __________________________
 Bowser's Blueprints ASM-Modules offer a way to make assembly patches that do not overwrite each other, or patches that have to overwrite random code in vanilla. They also allow multiple modules to hook into the same address by chaining them together, which made these modules super easy to create and share :).
