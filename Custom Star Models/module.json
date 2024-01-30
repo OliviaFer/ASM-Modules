@@ -1,0 +1,107 @@
+{
+	"schema_version": "1.2.0",
+	"name": "Custom Star Models",
+	"uuid": "f69c85d1-7f16-45fe-8eaa-d3eadb929b87",
+	"version": "1.0.2",
+	"author": "OliviaFer",
+	"description": "Sets the model IDs for the Star, Transparent Star and the Red Coin Marker.\n\nNOTES:\n- To avoid graphical issues or crashes, the model IDs used MUST exist in every level with a Star.\n- Does not modify Star Select, Klepto or Unagi.",
+	"properties": [
+		{
+			"name": "Star Model ID",
+			"type": "Integer",
+			"label": "STAR",
+			"description": "The model ID used for the regular Star.",
+			"default": 122,
+			"min": 0,
+			"max": 255
+		},
+		{
+			"name": "Transparent Star Model ID",
+			"type": "Integer",
+			"label": "TRANSPARENT_STAR",
+			"description": "The model ID used for the Transparent Star.",
+			"default": 121,
+			"min": 0,
+			"max": 255
+		},
+		{
+			"name": "Red Coin Marker Model ID",
+			"type": "Integer",
+			"label": "MARKER",
+			"description": "The model ID used for the Red Coin Marker.",
+			"default": 121,
+			"min": 0,
+			"max": 255
+		}
+	],
+	"entry_global": [{
+		"file": "collect-star.asm",
+		"start": "AD548",
+		"end": "AD5B0"
+	},
+	{
+		"file": "celebration-star.asm",
+		"start": "A8050",
+		"end": "A810C"
+	},
+	{
+		"file": "star-id.asm",
+		"start": "5EEA6",
+		"end": "5EEA8"
+	},
+	{
+		"file": "star-id.asm",
+		"start": "71606",
+		"end": "71608"
+	},
+	{
+		"file": "star-id.asm",
+		"start": "131FA",
+		"end": "131FC"
+	},
+	{
+		"file": "star-id.asm",
+		"start": "13E92",
+		"end": "13E94"
+	},
+	{
+		"file": "star-id.asm",
+		"start": "17076",
+		"end": "17078"
+	},
+	{
+		"file": "star-id.asm",
+		"start": "6657A",
+		"end": "6657C"
+	},
+	{
+		"file": "star-id.asm",
+		"start": "ADAD2",
+		"end": "ADAD4"
+	},
+	{
+		"file": "star-id.asm",
+		"start": "ADCEE",
+		"end": "ADCF0"
+	},
+	{
+		"file": "star-id.asm",
+		"start": "AE052",
+		"end": "AE054"
+	},
+	{
+		"file": "marker-id.asm",
+		"start": "ADCB6",
+		"end": "ADCB8"
+	},
+	{
+		"file": "transparent-star-id.asm",
+		"start": "6998A",
+		"end": "6998C"
+	},
+	{
+		"file": "transparent-star-id.asm",
+		"start": "65FD2",
+		"end": "65FD4"
+	}]
+}

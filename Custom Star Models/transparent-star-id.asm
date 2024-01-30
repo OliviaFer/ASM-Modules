@@ -1,0 +1,1 @@
+.halfword $TRANSPARENT_STAR
