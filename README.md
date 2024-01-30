@@ -1,9 +1,10 @@
 # ASM-Modules and Tweaks
 To use the asm-modules, the .bbpmod files should be installed in the 'ASM Modules' menu, and then added from the library with 'Add Module'.
 For some of the ones shared here, you must modify a few things to use them, specially for the title area.
+Since ASM-Modules are all super modular, all of them can be added and are currently fully compatible with all the default ASM-Modules included in BBP.
 
 For the tweaks, install 'extra-tweaks-pack.json' in the Tweaks menu using the 'Manage Tweak Packs' option.
-All of these tweaks are harmless as Bowser's Blueprints can automatically revert tweaks for you, so they can be played around with.
+All of these tweaks are harmless as Bowser's Blueprints can easily revert tweaks for you, so they can be played around with.
 
 
 __________________________
